@@ -1,13 +1,15 @@
+package modelo;
+
 
 public class chofer_modelo {
    private String nombre_chofer = "Juan";
-   String apellido_chofer = "Perez";
+   String licencia = "activa";
    String cedula_chofer = "123456789";
 
    // Constructor
-   public chofer_modelo(String dato_nombre, String dato_apellido, String dato_cedula) {
+   public chofer_modelo(String dato_nombre, String licencia, String dato_cedula) {
       this.nombre_chofer = dato_nombre;
-      this.apellido_chofer = dato_apellido;
+      this.licencia = licencia;
       this.cedula_chofer = dato_cedula;
 
    }
@@ -17,8 +19,8 @@ public class chofer_modelo {
       return nombre_chofer;
    }
 
-   public String getApellido_chofer() {
-      return apellido_chofer;
+   public String getLicencia() {
+      return licencia;
    }
 
    public String getCedula_chofer() {
@@ -30,8 +32,8 @@ public class chofer_modelo {
       this.nombre_chofer = nombre_chofer;
    }
 
-   public void setApellido_chofer(String apellido_chofer) {
-      this.apellido_chofer = apellido_chofer;
+   public void setLicencia(String licencia) {
+      this.licencia = licencia;
    }
 
    public void setCedula_chofer(String cedula_chofer) {
@@ -40,6 +42,6 @@ public class chofer_modelo {
 
    @Override
    public String toString() {
-      return "Nombre: " + nombre_chofer + " Apellido: " + apellido_chofer + " Cedula: " + cedula_chofer;
+      return "Nombre: " + nombre_chofer + " Apellido: " + licencia + " Cedula: " + cedula_chofer;
    }
 }

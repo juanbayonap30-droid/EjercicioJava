@@ -1,3 +1,5 @@
+package modelo;
+
 import java.util.Scanner;
 
 public class tiendaParking {
@@ -10,12 +12,12 @@ public class tiendaParking {
 
         
         // OBJETO CHOFER
-        chofer_modelo obj_chofer = new chofer_modelo("Juan", "Perez", "123456789");
+        chofer_modelo obj_chofer = new chofer_modelo("Juan", "activa", "123456789");
 
         obj_chofer.setNombre_chofer("Carlos");
 
         System.out.println("Nombre del chofer: " + obj_chofer.getNombre_chofer());
-        System.out.println("Apellido del chofer: " + obj_chofer.getApellido_chofer());
+        System.out.println("Licencia del chofer: " + obj_chofer.getLicencia());
         System.out.println("Cédula del chofer: " + obj_chofer.getCedula_chofer());
 
         System.out.println();
@@ -34,13 +36,13 @@ public class tiendaParking {
 
     
         // OBJETO MOTOR
-        motor_modelo obj_motor = new motor_modelo("V8", "Gasolina", "450 HP");
+        motor_modelo obj_motor = new motor_modelo("V8", "Gasolina", "1234567");
 
         obj_motor.setTipo("V6");
 
         System.out.println("Tipo de motor: " + obj_motor.getTipo());
         System.out.println("Combustible: " + obj_motor.getCombustible());
-        System.out.println("Potencia: " + obj_motor.getPotencia());
+        System.out.println("serial: " + obj_motor.getSerial());
 
         scanner.close();
     }
