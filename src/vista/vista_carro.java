@@ -1,23 +1,32 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package vista;
+
 import java.util.Scanner;
 
-/**
- *
- * @author Acer
- */
 public class vista_carro {
-    public void registrar_carro(){
-    Scanner obj_teclado = new Scanner(System.in);
-    String marca = obj_teclado.nextLine();
-    String modelo = obj_teclado.nextLine();
-    String placa = obj_teclado.nextLine();
-    
-    Controlar obj_controlador = new controlador();
+    private String marca = "";
+    private String modelo = "";
+    private String placa = "";
+
+    public void registrar_carro() {
+        Scanner obj_teclado = new Scanner(System.in);
+        System.out.println("\n--- REGISTRO DE CARRO ---");
+        System.out.print("Ingrese marca del carro: ");
+        this.marca = obj_teclado.nextLine().trim();
+        System.out.print("Ingrese modelo del carro: ");
+        this.modelo = obj_teclado.nextLine().trim();
+        System.out.print("Ingrese placa del carro: ");
+        this.placa = obj_teclado.nextLine().trim();
     }
-    
-    
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public String getPlaca() {
+        return placa;
+    }
 }

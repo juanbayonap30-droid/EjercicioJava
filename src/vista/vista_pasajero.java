@@ -1,23 +1,32 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package vista;
+
 import java.util.Scanner;
 
-/**
- *
- * @author Acer
- */
 public class vista_pasajero {
-    public void registrar_pasajero(){
-    Scanner obj_teclado = new Scanner(System.in);
-    String nombre = obj_teclado.nextLine();
-    String apellido = obj_teclado.nextLine();
-    String cedula = obj_teclado.nextLine();
-    
-    Controlar obj_controlador = new controlador();
+    private String nombre = "";
+    private String apellido = "";
+    private String cedula = "";
+
+    public void registrar_pasajero() {
+        Scanner obj_teclado = new Scanner(System.in);
+        System.out.println("\n--- REGISTRO DE PASAJERO ---");
+        System.out.print("Ingrese nombre del pasajero: ");
+        this.nombre = obj_teclado.nextLine().trim();
+        System.out.print("Ingrese apellido del pasajero: ");
+        this.apellido = obj_teclado.nextLine().trim();
+        System.out.print("Ingrese cédula del pasajero: ");
+        this.cedula = obj_teclado.nextLine().trim();
     }
-    
-    
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public String getCedula() {
+        return cedula;
+    }
 }

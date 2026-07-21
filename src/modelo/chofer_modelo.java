@@ -39,6 +39,13 @@ public class chofer_modelo {
    public void setCedula_chofer(String cedula_chofer) {
       this.cedula_chofer = cedula_chofer;
    }
+   //metodos de responsabilidad
+   //son los que van directamente a interactuar con la base de datos o con las apis
+   //..son los atributos --> reglas del negocio
+   //1. la cedula sea valida
+   //2. validar la licencia
+   //3. validar nombre y apellido
+   
 
    @Override
    public String toString() {

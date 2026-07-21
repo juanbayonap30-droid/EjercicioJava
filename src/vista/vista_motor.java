@@ -1,23 +1,32 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package vista;
+
 import java.util.Scanner;
 
-/**
- *
- * @author Acer
- */
 public class vista_motor {
-    public void registrar_motor(){
-    Scanner obj_teclado = new Scanner(System.in);
-    String tipo = obj_teclado.nextLine();
-    String combustible = obj_teclado.nextLine();
-    String serial = obj_teclado.nextLine();
-    
-    Controlar obj_controlador = new controlador();
+    private String tipo = "";
+    private String combustible = "";
+    private String serial = "";
+
+    public void registrar_motor() {
+        Scanner obj_teclado = new Scanner(System.in);
+        System.out.println("\n--- REGISTRO DE MOTOR ---");
+        System.out.print("Ingrese tipo de motor (ej. V8, Eléctrico): ");
+        this.tipo = obj_teclado.nextLine().trim();
+        System.out.print("Ingrese tipo de combustible: ");
+        this.combustible = obj_teclado.nextLine().trim();
+        System.out.print("Ingrese número de serie del motor: ");
+        this.serial = obj_teclado.nextLine().trim();
     }
-    
-    
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public String getCombustible() {
+        return combustible;
+    }
+
+    public String getSerial() {
+        return serial;
+    }
 }
