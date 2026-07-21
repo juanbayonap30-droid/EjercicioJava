@@ -42,6 +42,6 @@ public class chofer_modelo {
 
    @Override
    public String toString() {
-      return "Nombre: " + nombre_chofer + " Apellido: " + licencia + " Cedula: " + cedula_chofer;
+      return "Nombre: " + nombre_chofer + " Licencia: " + licencia + " Cedula: " + cedula_chofer;
    }
 }
