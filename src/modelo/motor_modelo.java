@@ -1,14 +1,16 @@
+package modelo;
+
 
 public class motor_modelo {
     private String tipo = "";
     private String combustible = "";
-    private String potencia = "";
+    private String serial = "";
 
     // Constructor
-    public motor_modelo(String tipo, String combustible, String potencia) {
+    public motor_modelo(String tipo, String combustible, String serial) {
         this.tipo = tipo;
         this.combustible = combustible;
-        this.potencia = potencia;
+        this.serial = serial;
     }
 
     // Getters
@@ -20,8 +22,8 @@ public class motor_modelo {
         return combustible;
     }
 
-    public String getPotencia() {
-        return potencia;
+    public String getSerial() {
+        return serial;
     }
 
     // Setters
@@ -33,12 +35,12 @@ public class motor_modelo {
         this.combustible = combustible;
     }
 
-    public void setPotencia(String potencia) {
-        this.potencia = potencia;
+    public void setSerial(String serial) {
+        this.serial = serial;
     }
 
     @Override
     public String toString() {
-        return "Tipo: " + tipo + " Combustible: " + combustible + " Potencia: " + potencia;
+        return "Tipo: " + tipo + " Combustible: " + combustible + " Potencia: " + serial;
     }
 }

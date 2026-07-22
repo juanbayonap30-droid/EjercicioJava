@@ -1,3 +1,5 @@
+package modelo;
+
 
 public class carro_modelo {
 
@@ -44,4 +46,8 @@ public class carro_modelo {
          " Modelo: " + modelo +
                " Placa: " + placa;
     }
+    public void buscar_placa(String info_placa){
+        System.out.println("buscando placa..");
+    }
+            
 }

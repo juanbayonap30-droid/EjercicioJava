@@ -14,3 +14,9 @@
 .project
 .classpath
 .settings/
+
+# NetBeans build and private config folders
+/build/
+/dist/
+/nbproject/private/
+
