@@ -36,7 +36,11 @@ public class controlador_general {
         String dato_licencia = this.vChofer.getLicencia();
         
         chofer_modelo obj_chofer = new chofer_modelo(dato_nombre, dato_licencia, dato_cedula);
-        System.out.println("\n[Controlador] Chofer registrado: " + obj_chofer.toString());
+        if (ValidadorEntradas.validarChofer(obj_chofer)) {
+            System.out.println("\n[Controlador - Éxito] Chofer validado y registrado: " + obj_chofer.toString());
+        } else {
+            System.out.println("\n[Controlador - Error] El Chofer no cumple con las reglas del negocio.");
+        }
     }
 
     // Orquesta la creación y validación completa de una FichaViaje
@@ -60,6 +64,11 @@ public class controlador_general {
         pasajero_modelo pasajero = new pasajero_modelo(vPasajero.getNombre(), vPasajero.getApellido(), vPasajero.getCedula());
         
         FichaViaje ficha = new FichaViaje(carro, motor, chofer, pasajero);
+        if (ValidadorEntradas.validarFichaViaje(ficha)) {
+            System.out.println("\n[Controlador - Éxito] Ficha de Viaje validada correctamente por el ValidadorEntradas.");
+        } else {
+            System.out.println("\n[Controlador - Advertencia] La Ficha de Viaje contiene datos que violan las reglas del negocio.");
+        }
         return ficha;
     }
 
@@ -68,6 +77,10 @@ public class controlador_general {
         this.vApi.registrar_api();
         api_modelo api = new api_modelo(vApi.getClave(), vApi.getRoot(), vApi.getUrl());
         System.out.println("\n[Controlador] Datos API: " + api.toString());
+        if (!ValidadorEntradas.validarApi(api)) {
+            System.out.println("[Controlador - Error] Datos de API no cumplen con las reglas del negocio.");
+            return;
+        }
         System.out.println("[Controlador] Probando conexión...");
         if (api.validar_conexion()) {
             System.out.println("[Controlador] ¡Conexión API exitosa!");

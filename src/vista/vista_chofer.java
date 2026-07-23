@@ -1,10 +1,11 @@
 package vista;
 
+import modelo.ValidadorEntradas;
 import java.util.Scanner;
 
 public class vista_chofer {
     // Escáner a nivel de clase para que los métodos lo puedan usar
-    Scanner obj_teclado = new Scanner(System.in);
+    private Scanner obj_teclado = new Scanner(System.in);
 
     // Campos para almacenar los datos capturados
     private String nombre;
@@ -13,12 +14,10 @@ public class vista_chofer {
 
     // Método principal que agrupa la captura de todos los datos del chofer
     public void registrar_chofer() {
-        System.out.print("Ingrese nombre del chofer: ");
-        this.nombre = obj_teclado.nextLine();
-        System.out.print("Ingrese cédula del chofer: ");
-        this.cedula = obj_teclado.nextLine();
-        System.out.print("Ingrese licencia del chofer: ");
-        this.licencia = obj_teclado.nextLine();
+        System.out.println("\n--- REGISTRO DE CHOFER ---");
+        this.nombre = ValidadorEntradas.leerSoloLetras(obj_teclado, "Ingrese nombre del chofer: ");
+        this.cedula = ValidadorEntradas.leerCedula(obj_teclado, "Ingrese cédula del chofer (6-10 dígitos): ");
+        this.licencia = ValidadorEntradas.leerLicencia(obj_teclado, "Ingrese licencia del chofer: ");
     }
 
     // Getters esperados por el controlador
@@ -36,17 +35,14 @@ public class vista_chofer {
 
     // Métodos originales individuales (mantenidos por compatibilidad)
     public String tomarnombre() {
-        System.out.print("Ingrese nombre del chofer: ");
-        return obj_teclado.nextLine();
+        return ValidadorEntradas.leerSoloLetras(obj_teclado, "Ingrese nombre del chofer: ");
     }
 
     public String tomarcedula() {
-        System.out.print("Ingrese cédula del chofer: ");
-        return obj_teclado.nextLine();
+        return ValidadorEntradas.leerCedula(obj_teclado, "Ingrese cédula del chofer (6-10 dígitos): ");
     }
 
     public String tomarlicencia() {
-        System.out.print("Ingrese licencia del chofer: ");
-        return obj_teclado.nextLine();
+        return ValidadorEntradas.leerLicencia(obj_teclado, "Ingrese licencia del chofer: ");
     }
 }

@@ -1,5 +1,6 @@
 package vista;
 
+import modelo.ValidadorEntradas;
 import java.util.Scanner;
 
 public class vista_motor {
@@ -10,12 +11,9 @@ public class vista_motor {
     public void registrar_motor() {
         Scanner obj_teclado = new Scanner(System.in);
         System.out.println("\n--- REGISTRO DE MOTOR ---");
-        System.out.print("Ingrese tipo de motor (ej. V8, Eléctrico): ");
-        this.tipo = obj_teclado.nextLine().trim();
-        System.out.print("Ingrese tipo de combustible: ");
-        this.combustible = obj_teclado.nextLine().trim();
-        System.out.print("Ingrese número de serie del motor: ");
-        this.serial = obj_teclado.nextLine().trim();
+        this.tipo = ValidadorEntradas.leerAlfanumerico(obj_teclado, "Ingrese tipo de motor (ej. V8, Eléctrico): ");
+        this.combustible = ValidadorEntradas.leerSoloLetras(obj_teclado, "Ingrese tipo de combustible: ");
+        this.serial = ValidadorEntradas.leerSerialMotor(obj_teclado, "Ingrese número de serie del motor (5-20 alfanumérico): ");
     }
 
     public String getTipo() {
