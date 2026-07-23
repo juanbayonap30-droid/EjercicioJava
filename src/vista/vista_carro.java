@@ -1,5 +1,6 @@
 package vista;
 
+import modelo.ValidadorEntradas;
 import java.util.Scanner;
 
 public class vista_carro {
@@ -10,12 +11,9 @@ public class vista_carro {
     public void registrar_carro() {
         Scanner obj_teclado = new Scanner(System.in);
         System.out.println("\n--- REGISTRO DE CARRO ---");
-        System.out.print("Ingrese marca del carro: ");
-        this.marca = obj_teclado.nextLine().trim();
-        System.out.print("Ingrese modelo del carro: ");
-        this.modelo = obj_teclado.nextLine().trim();
-        System.out.print("Ingrese placa del carro: ");
-        this.placa = obj_teclado.nextLine().trim();
+        this.marca = ValidadorEntradas.leerSoloLetras(obj_teclado, "Ingrese marca del carro: ");
+        this.modelo = ValidadorEntradas.leerAlfanumerico(obj_teclado, "Ingrese modelo del carro: ");
+        this.placa = ValidadorEntradas.leerPlaca(obj_teclado, "Ingrese placa del carro (6-7 caracteres alfanuméricos): ");
     }
 
     public String getMarca() {

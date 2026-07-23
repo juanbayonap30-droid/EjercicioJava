@@ -1,5 +1,6 @@
 package vista;
 
+import modelo.ValidadorEntradas;
 import java.util.Scanner;
 
 public class vista_api {
@@ -10,12 +11,9 @@ public class vista_api {
     public void registrar_api() {
         Scanner obj_teclado = new Scanner(System.in);
         System.out.println("\n--- REGISTRO DE CONEXIÓN API ---");
-        System.out.print("Ingrese clave API: ");
-        this.clave = obj_teclado.nextLine().trim();
-        System.out.print("Ingrese root/usuario API: ");
-        this.root = obj_teclado.nextLine().trim();
-        System.out.print("Ingrese URL de la API: ");
-        this.url = obj_teclado.nextLine().trim();
+        this.clave = ValidadorEntradas.leerTextoNoVacio(obj_teclado, "Ingrese clave API: ");
+        this.root = ValidadorEntradas.leerTextoNoVacio(obj_teclado, "Ingrese root/usuario API: ");
+        this.url = ValidadorEntradas.leerTextoNoVacio(obj_teclado, "Ingrese URL de la API: ");
     }
 
     public String getClave() {

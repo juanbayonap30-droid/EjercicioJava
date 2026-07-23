@@ -1,5 +1,6 @@
 package vista;
 
+import modelo.ValidadorEntradas;
 import java.util.Scanner;
 
 public class vista_pasajero {
@@ -10,12 +11,9 @@ public class vista_pasajero {
     public void registrar_pasajero() {
         Scanner obj_teclado = new Scanner(System.in);
         System.out.println("\n--- REGISTRO DE PASAJERO ---");
-        System.out.print("Ingrese nombre del pasajero: ");
-        this.nombre = obj_teclado.nextLine().trim();
-        System.out.print("Ingrese apellido del pasajero: ");
-        this.apellido = obj_teclado.nextLine().trim();
-        System.out.print("Ingrese cédula del pasajero: ");
-        this.cedula = obj_teclado.nextLine().trim();
+        this.nombre = ValidadorEntradas.leerSoloLetras(obj_teclado, "Ingrese nombre del pasajero: ");
+        this.apellido = ValidadorEntradas.leerSoloLetras(obj_teclado, "Ingrese apellido del pasajero: ");
+        this.cedula = ValidadorEntradas.leerCedula(obj_teclado, "Ingrese cédula del pasajero (6-10 dígitos): ");
     }
 
     public String getNombre() {

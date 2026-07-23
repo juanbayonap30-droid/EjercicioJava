@@ -90,11 +90,11 @@ public class tiendaParking {
         FichaViaje fichaSeleccionada = estructuraTemporal.get(index);
         
         // Validar y Confirmar con el Encargado de la Base de Datos
-        boolean confirmado = ValidadorBaseDatos.confirmarGuardado(fichaSeleccionada, scanner);
+        /*boolean confirmado = ValidadorBaseDatos.confirmarGuardado(fichaSeleccionada, scanner);
         if (confirmado) {
             baseDeDatos.add(fichaSeleccionada);
             estructuraTemporal.remove(index);
-        }
+        }*/
     }
 
     private static void mostrarFichas(String titulo, List<FichaViaje> lista) {
